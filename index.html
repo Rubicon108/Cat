@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiuto Gatti - Locandina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      padding: 2cm;
+      width: 21cm;
+      height: 29.7cm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(#e8f6fc, #fffdf6);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      color: #3c6e71;
+      margin: 0.5em 0;
+    }
+
+    .content {
+      text-align: center;
+      font-size: 1.25em;
+      line-height: 1.8em;
+      padding: 0 1em;
+      position: relative;
+    }
+
+    .content::before, .content::after {
+      content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Paw-print.svg/64px-Paw-print.svg.png');
+      position: absolute;
+      width: 64px;
+      height: auto;
+      opacity: 0.2;
+    }
+
+    .content::before {
+      left: 0;
+      top: 10%;
+    }
+
+    .content::after {
+      right: 0;
+      bottom: 10%;
+    }
+
+    .qr {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
+
+    @media print {
+      body {
+        width: auto;
+        height: auto;
+        padding: 1cm;
+        background: white;
+      }
+      .content::before, .content::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾 CERCO UNA MANO CON I MIEI GATTI 🐾</h1>
+
+  <div class="content">
+    <p>
+      Dal 17 al 23 agosto sarò via e avrei bisogno di qualcuno che<br>
+      passi una volta al giorno a dare da mangiare ai miei 2 gatti.
+      <br><br>
+      È tutto già pronto, basta solo un piccolo gesto quotidiano.
+      <br><br>
+      Se sei disponibile, contattami:<br>
+      📞 Cinzia 3333118888
+      <br><br>
+      Grazie ❤️
+    </p>
+  </div>
+
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://esempio.it/locandina-gatti&size=120x120" alt="QR Code per questa pagina">
+  </div>
+</body>
+</html>
