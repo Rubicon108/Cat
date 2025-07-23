@@ -17,10 +17,10 @@
       color: #333;
       padding: 2cm;
       width: 21cm;
-      height: 29.7cm;
+      height: auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
       background: linear-gradient(#e8f6fc, #fffdf6);
     }
 
@@ -37,6 +37,7 @@
       line-height: 1.8em;
       padding: 0 1em;
       position: relative;
+      max-width: 600px;
     }
 
     .content::before, .content::after {
@@ -63,14 +64,53 @@
       margin-top: 1.5em;
     }
 
+    .form-container {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #ffffffdd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 1em;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 1.5em;
+      padding: 10px;
+      background-color: #3c6e71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2b5053;
+    }
+
     @media print {
       body {
-        width: auto;
-        height: auto;
         padding: 1cm;
         background: white;
       }
-      .content::before, .content::after {
+      .content::before, .content::after, .form-container {
         display: none;
       }
     }
@@ -93,8 +133,24 @@
     </p>
   </div>
 
-<div class="qr">
-    <img src="WhatsApp.png" alt="QR Code per WhatsAppa">
-</div>
+  <div class="qr">
+    <img src="WhatsApp.png" alt="QR Code per WhatsApp">
+  </div>
+
+  <div class="form-container">
+    <form action="send.php" method="POST">
+      <h2 style="text-align:center;">Registrati per aiutare</h2>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="telefono">Telefono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Invia Registrazione</button>
+    </form>
+  </div>
 </body>
 </html>
